@@ -17,8 +17,10 @@ export default function Card(props: CardProps) {
                     </svg>
                 </button>
             </div>
-            <div className="mt-2 mb-4">
-                <img src={props.img} className={props.imgWidth} />
+            <div className="flex items-end mb-3 h-12">
+                <div className="block">
+                    <img src={props.img} className={props.imgWidth} />
+                </div>
             </div>
             <div className="space-y-1">
                 <p className="font-bold">{props.title}</p>

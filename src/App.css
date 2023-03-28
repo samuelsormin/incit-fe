@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+table {
+  @apply border-separate border-spacing-y-3
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table thead {
+  @apply bg-white shadow shadow-gray-200 text-sm 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table th {
+  @apply text-left font-normal px-5 py-3
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+table th:first-child {
+  @apply rounded-l
 }
 
-.App-link {
-  color: #61dafb;
+table th:last-child {
+  @apply rounded-r
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table tr {
+  @apply bg-white shadow shadow-gray-200
+}
+
+table td {
+  @apply text-left font-normal px-4 py-3
+}
+
+table td:first-child {
+  @apply rounded-l
+}
+
+table td:last-child {
+  @apply rounded-r
 }
