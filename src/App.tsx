@@ -44,8 +44,8 @@ function App() {
       <Header />
       <Sidebar />
       <section className="flex flex-auto">
-        <div className="flex-none w-72"></div>
-        <div className="flex-grow p-10">
+        <div className="hidden xl:block flex-none w-72"></div>
+        <div className="flex-grow p-6 sm:p-10">
           <div className="mt-16 mb-12">
             <h1 className="text-3xl font-bold">Hi Radhika, welcome back!</h1>
           </div>
@@ -53,7 +53,7 @@ function App() {
             <p className="text-xl font-bold">Your client list</p>
             <p className="text-sm">You currently servicing 3 clients</p>
           </div>
-          <div className="grid grid-cols-4 gap-4 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {clients.map((client, index) => (
               <Card
                 key={index}
@@ -65,13 +65,13 @@ function App() {
             ))}
           </div>
           <div className="block">
-            <div className="flex justify-between mb-6">
+            <div className="block sm:flex justify-between mb-6">
               <div className="block">
                 <p className="text-xl font-bold">Recent approvals</p>
                 <p className="text-sm">You can find the recent on-going approvals here</p>
               </div>
-              <div className="block">
-                <button className="flex items-center bg-navy-500 px-6 py-1 rounded-full">
+              <div className="block mt-3 sm:mt-0">
+                <button className="flex items-center justify-center w-fulls sm:w-auto bg-navy-500 px-6 py-1 rounded-full">
                   <svg className="mr-2" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.40257 -6.10352e-05H6.21497C6.10941 -6.10352e-05 6.05663 0.0517908 6.05663 0.155495V13.8444C6.05663 13.9481 6.10941 13.9999 6.21497 13.9999H7.40257C7.50813 13.9999 7.56091 13.9481 7.56091 13.8444V0.155495C7.56091 0.0517908 7.50813 -6.10352e-05 7.40257 -6.10352e-05Z" fill="white" />
                     <path d="M13.4593 6.26105H0.158284C0.0527199 6.26105 -6.20484e-05 6.3129 -6.20484e-05 6.41661V7.58327C-6.20484e-05 7.68698 0.0527199 7.73883 0.158284 7.73883H13.4593C13.5649 7.73883 13.6177 7.68698 13.6177 7.58327V6.41661C13.6177 6.3129 13.5649 6.26105 13.4593 6.26105Z" fill="white" />
@@ -80,23 +80,23 @@ function App() {
                 </button>
               </div>
             </div>
-            <div>
-              <table className="w-full">
-                <thead>
+            <div className="block">
+              <table className="w-full border-separate border-spacing-y-3">
+                <thead className="sm:bg-white text-sm shadow shadow-gray-200">
                   <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Current Price</th>
-                    <th>Market Cap</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">Market Cap</th>
                   </tr>
                 </thead>
                 <tbody>
                   {coinData && coinData.map((coin, index) => (
                     <tr key={index}>
-                      <td><img src={coin.image} alt={coin.name} className="w-10" /></td>
-                      <td><strong>{coin.name}</strong></td>
-                      <td>{`Rp${coin.current_price.toLocaleString('en-US')}`}</td>
-                      <td>{`Rp${coin.market_cap.toLocaleString('en-US')}`}</td>
+                      <td data-label="Image"><img src={coin.image} alt={coin.name} className="w-10 inline" /></td>
+                      <td data-label="Name"><span className="text-base font-bold">{coin.name}</span></td>
+                      <td data-label="Current Price"><span className="text-sm">{`Rp${coin.current_price.toLocaleString('en-US')}`}</span></td>
+                      <td data-label="Market Cap"><span className="text-sm">{`Rp${coin.market_cap.toLocaleString('en-US')}`}</span></td>
                     </tr>
                   ))}
                 </tbody>
