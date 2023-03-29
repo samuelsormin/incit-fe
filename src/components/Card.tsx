@@ -19,7 +19,7 @@ export default function Card(props: CardProps) {
             </div>
             <div className="flex items-end mb-3 h-12">
                 <div className="block">
-                    <img src={props.img} className={props.imgWidth} />
+                    <img src={props.img} alt={props.title} className={props.imgWidth} />
                 </div>
             </div>
             <div className="space-y-1">

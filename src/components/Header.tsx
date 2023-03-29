@@ -1,4 +1,8 @@
-export default function Header() {
+type HeaderProps = {
+    onClick: any
+}
+
+export default function Header(props: HeaderProps) {
     return (
         <header className="fixed w-full left-0 bg-white flex justify-between items-center h-16 px-6 sm:px-10 shadow z-10">
             <div className="hidden xl:block flex-none w-72"></div>
@@ -15,7 +19,7 @@ export default function Header() {
                     </svg>
                     <span className="hidden sm:block text-red-500"><strong>Logout</strong></span>
                 </button>
-                <button>
+                <button onClick={() => props.onClick(true)}>
                     <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 8.57143H25V11.4286H0V8.57143ZM0 0H25V2.85714H0V0ZM0 17.1429H25V20H0V17.1429Z" fill="#323A46" />
                     </svg>

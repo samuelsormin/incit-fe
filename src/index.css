@@ -12,3 +12,41 @@ body {
   color: #323A46;
   background-color: #F5F6FA;
 }
+
+/* === Fade transition === */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* === Sidebar slide transition === */
+.sidebar-slide-enter {
+  margin-left: -26rem;
+}
+
+.sidebar-slide-enter-active {
+  margin-left: 0;
+  transition: 300ms;
+}
+
+.sidebar-slide-exit {
+  margin-left: 0;
+}
+
+.sidebar-slide-exit-active {
+  margin-left: -26rem;
+  transition: 300ms;
+}
